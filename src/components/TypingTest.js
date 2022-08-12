@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import wordList from './words.json'
-import Words from './Words'
-import InputBar from './InputBar'
-import Timer from './Timer'
+// import Words from './Words'
+// import InputBar from './InputBar'
+// import Timer from './Timer'
 import useTimer from './hooks/useTimer'
 
 const generateArray = (wordDisplayLen) => {
@@ -27,8 +27,8 @@ let timeInterval = 15
 const TypingTest = () => {
     const [inputVal, setInputVal] = useState('')
     const [points, setPoints] = useState(0)
-    const [wordArrayState, setWordArrayState] = useState(generateArray())
-    const [wordArrayExtraState, setWordArrayExtraState] = useState(generateArray())
+    const [wordArrayState, setWordArrayState] = useState(wordArray)
+    const [wordArrayExtraState, setWordArrayExtraState] = useState(wordArrayExtra)
     const [showResults, setShowResults] = useState(false)
     const { time, startTimer, resetTimer } = useTimer(timeInterval)
     const inputBar = useRef(null)
@@ -41,9 +41,11 @@ const TypingTest = () => {
     if (inputVal !== '' && inputVal !== ' '){
         startTimer()
     }
+    console.log(`Word Array: ${wordArray}`)
+    console.log(`Word Array Extra: ${wordArray}`)
 
     const inputChangeHandler = (event) => {
-        console.log(currWord)
+        console.log(currWord)  // debug purpose 
         setInputVal(inputVal => event.target.value)
         if (event.target.value === ' '){
             event.target.value = ''
@@ -79,15 +81,16 @@ const TypingTest = () => {
     }
 
     const reset = () => {
-        setInputVal(inputVal => '')
-        setPoints(0)
-        setWordArrayState(wordArrayState => wordArrayState = generateArray(wordDisplayLen))
-        setWordArrayExtraState( wordArrayExtraState => wordArrayExtraState = generateArray(wordDisplayLen))
+        setInputVal(inputVal => inputVal = '')
+        setPoints(points => points = 0)
+        wordArray = generateArray(wordDisplayLen))
+        wordArrayExtra = generateArray(wordDisplayLen))
+        setWordArrayState(wordArrayState => wordArrayState = wordArray)
+        setWordArrayExtraState( wordArrayExtraState => wordArrayExtraState = wordArrayExtra)
         resetTimer()
+        
         // general memory
         selector = 0
-        wordArray = wordArrayState
-        wordArrayExtra = wordArrayExtraState
         currWord = wordArray[selector]
         inputBar.current.focus()
 
