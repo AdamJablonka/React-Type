@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import wordList from './words.json'
-// import Words from './Words'
+import Words from './Words'
 // import InputBar from './InputBar'
 // import Timer from './Timer'
 import useTimer from './hooks/useTimer'
