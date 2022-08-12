@@ -1,4 +1,4 @@
 # React Type
-React type is a web application to practice typing english words.
+React-Type is a simple front end web application to practice typing common English words, and to test typing speed.
 
-Created using the React.
+Created using the React framework.
