@@ -83,8 +83,8 @@ const TypingTest = () => {
     const reset = () => {
         setInputVal(inputVal => inputVal = '')
         setPoints(points => points = 0)
-        wordArray = generateArray(wordDisplayLen))
-        wordArrayExtra = generateArray(wordDisplayLen))
+        wordArray = generateArray(wordDisplayLen)
+        wordArrayExtra = generateArray(wordDisplayLen)
         setWordArrayState(wordArrayState => wordArrayState = wordArray)
         setWordArrayExtraState( wordArrayExtraState => wordArrayExtraState = wordArrayExtra)
         resetTimer()
