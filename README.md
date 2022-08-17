@@ -3,4 +3,4 @@ React-Type is a simple front end web application to practice typing common Engli
 
 Created using the React framework.
 
-```WIP: Some properties of the site may not work.```
+```WIP: Some features of the site may not work.```
