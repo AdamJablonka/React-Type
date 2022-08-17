@@ -7,7 +7,7 @@ import TypingTest from './components/TypingTest'
 const App = () => {
   return (
     <div>
-      <h1>react-type</h1>
+      <h1>react-type <sub><i>alpha</i></sub> </h1>
       <center>
         <TypingTest />
       </center>
