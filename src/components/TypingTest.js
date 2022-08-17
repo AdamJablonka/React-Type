@@ -1,10 +1,8 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import wordList from './words.json'
+import Button from './Button'
 import Words from './Words'
-// future implementation of these components will be added
-// import InputBar from './InputBar'
-// import Timer from './Timer'
 import useTimer from './hooks/useTimer'
 
 const generateArray = (wordDisplayLen) => {
@@ -22,8 +20,9 @@ let wordArray = generateArray(wordDisplayLen)
 let wordArrayExtra = generateArray(wordDisplayLen)
 let currWord = wordArray[selector]
 let WPM = 0
-let timeIntervalCalculation = 4
 let timeInterval = 15
+let timeIntervalCalculation = (60 / timeInterval)
+let resetButtonLabel = "↻"
 
 const TypingTest = () => {
     const [inputVal, setInputVal] = useState('')
@@ -42,8 +41,6 @@ const TypingTest = () => {
     if (inputVal !== '' && inputVal !== ' '){
         startTimer()
     }
-    console.log(`Word Array: ${wordArray}`)
-    console.log(`Word Array Extra: ${wordArray}`)
 
     const inputChangeHandler = (event) => {
         console.log(currWord)  // debug purpose 
@@ -115,15 +112,16 @@ const TypingTest = () => {
     }else{
         return(
             <div id="TypingTest">
-                <Words wordArray={wordArray} />
-                <Words wordArray={wordArrayExtra} />
-                <input autoFocus ref={inputBar} type="text" value={inputVal} onChange={inputChangeHandler} />
-                <div>{time}</div>
-                <button onClick={() => reset()}>Reset</button>
+                <div class="wordDisplay">
+                    <Words wordArray={wordArray} />
+                    <Words wordArray={wordArrayExtra} />
+                </div>
+                <input id="typingTestInput" autoFocus ref={inputBar} type="text" value={inputVal} onChange={inputChangeHandler} />
+                <p id="timeDisplay">{time}</p>
+                <Button id="resetButton" label={resetButtonLabel} clickHandler={reset}/>
             </div>
         )
     }
 }
-// <button onClick={startTimer}>start</button>
-// <InputBar changeHandler={inputChangeHandler} />
+
 export default TypingTest
