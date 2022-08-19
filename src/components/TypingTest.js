@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import wordList from './words.json'
 import Words from './Words'
 import useTimer from './hooks/useTimer'
-import { Flex, Input, Button, Box, Text, Container, IconButton } from '@chakra-ui/react'
+import { Flex, Input, Button, Box, Text, Container, IconButton, Kbd } from '@chakra-ui/react'
 import { RepeatIcon } from '@chakra-ui/icons'
 
 const generateArray = (wordDisplayLen) => {
@@ -24,7 +24,7 @@ let WPM = 0
 let timeInterval = 15
 let timeIntervalCalculation = (60 / timeInterval)
 
-const TypingTest = () => {
+const TypingTest = ( {kbdBackground} ) => {
     const [inputVal, setInputVal] = useState('')
     const [points, setPoints] = useState(0)
     const [wordArrayState, setWordArrayState] = useState(wordArray)
@@ -106,7 +106,7 @@ const TypingTest = () => {
         return(
             <Container centerContent>
                 <Text fontSize="50px" margin={5}>Results: {WPM} WPM</Text>
-                <Button onClick={() => showTypingTest()}>Try Again</Button>
+                <Button background={kbdBackground} onClick={() => showTypingTest()}>Try Again</Button>
             </Container>
         )
     }else{
@@ -126,6 +126,11 @@ const TypingTest = () => {
                 </Flex>
                 <Flex margin={2} direction="column">
                     <IconButton colorScheme="blue" aria-label='Restart Test' onClick={reset} icon={<RepeatIcon />} />
+                </Flex>
+                <Flex margin={5}>
+                    <span>
+                        <Kbd background={kbdBackground}>tab</Kbd> + <Kbd background={kbdBackground}>enter</Kbd> - restart test when typing
+                    </span>
                 </Flex>
             </Container>
         )
