@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import wordList from './words.json'
-import Button from './Button'
 import Words from './Words'
 import useTimer from './hooks/useTimer'
+import { Flex, Input, Button, Box, Text, Container, IconButton } from '@chakra-ui/react'
+import { RepeatIcon } from '@chakra-ui/icons'
 
 const generateArray = (wordDisplayLen) => {
     const arr = []
@@ -22,7 +23,6 @@ let currWord = wordArray[selector]
 let WPM = 0
 let timeInterval = 15
 let timeIntervalCalculation = (60 / timeInterval)
-let resetButtonLabel = "↻"
 
 const TypingTest = () => {
     const [inputVal, setInputVal] = useState('')
@@ -104,22 +104,30 @@ const TypingTest = () => {
 
     if(showResults === true){
         return(
-            <div>
-                <p>Results: {WPM} WPM</p>
-                <button onClick={() => showTypingTest()}>Try Again</button>
-            </div>
+            <Container centerContent>
+                <Text fontSize="50px" margin={5}>Results: {WPM} WPM</Text>
+                <Button onClick={() => showTypingTest()}>Try Again</Button>
+            </Container>
         )
     }else{
         return(
-            <div id="TypingTest">
-                <div class="wordDisplay">
-                    <Words wordArray={wordArray} />
-                    <Words wordArray={wordArrayExtra} />
-                </div>
-                <input id="typingTestInput" autoFocus ref={inputBar} type="text" value={inputVal} onChange={inputChangeHandler} />
-                <p id="timeDisplay">{time}</p>
-                <Button id="resetButton" label={resetButtonLabel} clickHandler={reset}/>
-            </div>
+            <Container maxW="750px" centerContent id="TypingTest">
+                <Box mb={2} borderWidth="2px" rounded="md" overflow="hidden" padding={10}>
+                        <Flex direction="column" justifyContent="left">
+                        <Words wordArray={wordArray} />
+                        <Words wordArray={wordArrayExtra} />
+                    </Flex>
+                </Box>
+                <Flex direction="column">
+                    <Flex>
+                        <Input borderWidth="2px" autoFocus ref={inputBar} type="text" value={inputVal} onChange={inputChangeHandler}></Input>
+                        <Text fontSize='25px' margin={2}>{time}</Text>
+                    </Flex>
+                </Flex>
+                <Flex margin={2} direction="column">
+                    <IconButton colorScheme="blue" aria-label='Restart Test' onClick={reset} icon={<RepeatIcon />} />
+                </Flex>
+            </Container>
         )
     }
 }
