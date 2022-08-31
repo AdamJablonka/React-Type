@@ -6,32 +6,39 @@ import useTimer from './hooks/useTimer'
 import { Flex, Input, Button, Box, Text, Container, IconButton, Kbd } from '@chakra-ui/react'
 import { RepeatIcon } from '@chakra-ui/icons'
 
-const generateArray = (wordDisplayLen) => {
-    const arr = []
-    for(let i = 0; i <= wordDisplayLen; i++){
+const generateArray = () => {
+    const arr = [""]
+    for(let i = 0; i <= 70; i++){
         let randNum = Math.floor(Math.random() * wordList.commonWords.length)
+
+        // makes sure that the word chosen is not too long. balances the diffuclty of each word
+        while(wordList.commonWords[randNum].length > 6){
+            randNum = Math.floor(Math.random() * wordList.commonWords.length)
+        }
         arr[i] = wordList.commonWords[randNum]
     }
     return arr
 }
 
-let wordDisplayLen = 16
 let selector = 0
-let wordArray = generateArray(wordDisplayLen)
-let wordArrayExtra = generateArray(wordDisplayLen)
+let wordArray = generateArray()
 let currWord = wordArray[selector]
 let WPM = 0
 let timeInterval = 15
 let timeIntervalCalculation = (60 / timeInterval)
 
 const TypingTest = ( {kbdBackground} ) => {
+    const [topDisplacement, setTopDisplacement] = useState(0)
     const [inputVal, setInputVal] = useState('')
     const [points, setPoints] = useState(0)
     const [wordArrayState, setWordArrayState] = useState(wordArray)
-    const [wordArrayExtraState, setWordArrayExtraState] = useState(wordArrayExtra)
     const [showResults, setShowResults] = useState(false)
     const { time, startTimer, resetTimer } = useTimer(timeInterval)
     const inputBar = useRef(null)
+
+    const changeTop = () => {
+        setTopDisplacement(topDisplacement => topDisplacement - 38)
+    }
 
     // debug purposes...
     useEffect(() => {
@@ -42,9 +49,9 @@ const TypingTest = ( {kbdBackground} ) => {
         startTimer()
     }
 
-    const inputChangeHandler = (event) => {
+    const inputChangeHandler = (event: any) => {
         console.log(currWord)  // debug purpose 
-        setInputVal(inputVal => event.target.value)
+        setInputVal(inputVal => inputVal = event.target.value)
         if (event.target.value === ' '){
             event.target.value = ''
         }
@@ -53,23 +60,12 @@ const TypingTest = ( {kbdBackground} ) => {
             event.target.value = ''
             selector += 1
             setPoints(points => points + 1)
-            if (selector > wordDisplayLen){
-                selector = 0
-                wordArray = wordArrayExtra
-                wordArrayExtra = generateArray(wordDisplayLen)
-            }
             currWord = wordArray[selector]
         }
 
         if (event.target.value.includes(' ')){
             event.target.value = ''
             selector += 1
-
-            if(selector > wordDisplayLen){
-                selector = 0
-                wordArray = wordArrayExtra
-                wordArrayExtra = generateArray(wordDisplayLen)
-            }
             currWord = wordArray[selector]
         }
     }
@@ -81,11 +77,10 @@ const TypingTest = ( {kbdBackground} ) => {
     const reset = () => {
         setInputVal(inputVal => inputVal = '')
         setPoints(points => points = 0)
-        wordArray = generateArray(wordDisplayLen)
-        wordArrayExtra = generateArray(wordDisplayLen)
+        wordArray = generateArray()
         setWordArrayState(wordArrayState => wordArrayState = wordArray)
-        setWordArrayExtraState( wordArrayExtraState => wordArrayExtraState = wordArrayExtra)
         resetTimer()
+        setTopDisplacement(topDisplacement => topDisplacement = 0)
         
         // general memory
         selector = 0
@@ -105,23 +100,23 @@ const TypingTest = ( {kbdBackground} ) => {
     if(showResults === true){
         return(
             <Container centerContent>
-                <Text fontSize="50px" margin={5}>Results: {WPM} WPM</Text>
+                <Text fontSize="50px" margin={2}>Results: </Text>
+                <Text fontSize="50px" margin={2}>{WPM} WPM</Text>
                 <Button colorScheme="blue" onClick={() => showTypingTest()}>Try Again</Button>
             </Container>
         )
     }else{
         return(
-            <Container maxW="750px" centerContent id="TypingTest">
-                <Box mb={2} borderWidth="2px" rounded="md" overflow="hidden" padding={10}>
-                        <Flex direction="column" justifyContent="left">
-                        <Words wordArray={wordArray} />
-                        <Words wordArray={wordArrayExtra} />
+            <Container minW="330px" maxW="750px" centerContent className="typingTestConatiner">
+                <Box mb={2} className="wordBox" borderWidth="2px" rounded="md" overflow="hidden" padding={2}>
+                    <Flex className="wordsContainer" direction="column" justifyContent="left">
+                        <Words wordArray={wordArray} selector={selector} topDisplacement={topDisplacement} changeTop={changeTop}/>
                     </Flex>
                 </Box>
                 <Flex direction="column">
-                    <Flex>
-                        <Input borderWidth="2px" autoFocus ref={inputBar} type="text" value={inputVal} onChange={inputChangeHandler}></Input>
-                        <Text fontSize='25px' margin={2}>{time}</Text>
+                    <Flex className="inputAndTimer">
+                        <Input borderWidth="2px" autoFocus ref={inputBar} type="text" value={inputVal} padding="2px" onChange={inputChangeHandler}></Input>
+                        <Text fontSize='25px' width="50px" margin={2}>{time}</Text>
                     </Flex>
                 </Flex>
                 <Flex margin={2} direction="column">

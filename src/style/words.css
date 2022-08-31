@@ -1,0 +1,27 @@
+.word{
+    font-size: 25px;
+    margin: 3px;
+    padding-left:5px;
+}
+
+.wordSelected{
+    border-radius: 5px;
+    font-size: 25px;
+    margin: 3px;
+    padding-left:5px;
+    background-color: lightgray;
+}
+
+.wordCorrect{
+    color:green;
+}
+
+.wordIncorrect{
+    color: red;
+}
+
+.wordBox{
+    min-width: 100px;
+    min-height: 165px;
+    max-height: 165px;
+}
