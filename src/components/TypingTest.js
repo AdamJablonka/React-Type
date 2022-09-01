@@ -8,11 +8,14 @@ import { RepeatIcon } from '@chakra-ui/icons'
 
 const generateArray = () => {
     const arr = [""]
-    for(let i = 0; i <= 70; i++){
+    for(let i = 0; i <= 400; i++){
         let randNum = Math.floor(Math.random() * wordList.commonWords.length)
 
         // makes sure that the word chosen is not too long. balances the diffuclty of each word
         while(wordList.commonWords[randNum].length > 6){
+            if(wordList.commonWords[randNum] === arr[i - 1]){
+                continue
+            }
             randNum = Math.floor(Math.random() * wordList.commonWords.length)
         }
         arr[i] = wordList.commonWords[randNum]
@@ -27,9 +30,10 @@ let WPM = 0
 let timeInterval = 15
 let timeIntervalCalculation = (60 / timeInterval)
 
-const TypingTest = ( {kbdBackground} ) => {
+const TypingTest = ( { kbdBackground, hlBackground } ) => {
     const [topDisplacement, setTopDisplacement] = useState(0)
     const [inputVal, setInputVal] = useState('')
+
     const [points, setPoints] = useState(0)
     const [wordArrayState, setWordArrayState] = useState(wordArray)
     const [showResults, setShowResults] = useState(false)
@@ -40,17 +44,11 @@ const TypingTest = ( {kbdBackground} ) => {
         setTopDisplacement(topDisplacement => topDisplacement - 38)
     }
 
-    // debug purposes...
-    useEffect(() => {
-        console.log(`Words typed: ${points}`)
-    }, [points])
- 
     if (inputVal !== '' && inputVal !== ' '){
         startTimer()
     }
 
-    const inputChangeHandler = (event: any) => {
-        console.log(currWord)  // debug purpose 
+    const inputChangeHandler = (event: any) => { 
         setInputVal(inputVal => inputVal = event.target.value)
         if (event.target.value === ' '){
             event.target.value = ''
@@ -75,12 +73,12 @@ const TypingTest = ( {kbdBackground} ) => {
     }
 
     const reset = () => {
+        setTopDisplacement(topDisplacement => topDisplacement = 0)
         setInputVal(inputVal => inputVal = '')
         setPoints(points => points = 0)
         wordArray = generateArray()
         setWordArrayState(wordArrayState => wordArrayState = wordArray)
         resetTimer()
-        setTopDisplacement(topDisplacement => topDisplacement = 0)
         
         // general memory
         selector = 0
@@ -108,9 +106,9 @@ const TypingTest = ( {kbdBackground} ) => {
     }else{
         return(
             <Container minW="330px" maxW="750px" centerContent className="typingTestConatiner">
-                <Box mb={2} className="wordBox" borderWidth="2px" rounded="md" overflow="hidden" padding={2}>
+                <Box mb={2} className="wordBox" borderWidth="2px" rounded="md" overflow="hidden" padding={1}>
                     <Flex className="wordsContainer" direction="column" justifyContent="left">
-                        <Words wordArray={wordArray} selector={selector} topDisplacement={topDisplacement} changeTop={changeTop}/>
+                        <Words wordArray={wordArray} selector={selector} topDisplacement={topDisplacement} changeTop={changeTop} hlBackground={hlBackground} />
                     </Flex>
                 </Box>
                 <Flex direction="column">

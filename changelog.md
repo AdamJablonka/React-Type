@@ -2,14 +2,24 @@
 
 Changes and WIP features will be displayed here.
 
-# WIP Features
+## WIP Features
 
 - CSS highlighting on correct and incorrect words, green for correct and red for incorrect
-- Refactor hiding old words from view, currently testing array slicing to make this work
 - General Visual updates
-- Bug where old words are hidden on the second word of the new line instead of the first
+- Add a navbar and a footer
+- Fix bug invlolving color changing on buttons
+- Add a link to github page on footer
+- Make darkmode default
 
-# Aug 31
+## Sept 1
+
+- Fixed bug where you can see previous words when they were supposed to be removed
+- Fixed bug where old words were removed on second word of the new line
+- Implemented react-type-animation for header
+- Fixed bug where highlighted word color would not change on dark mode activation
+- Added functionality to prevent same word from appearing twice in a row 
+
+## Aug 31
 
 - Array generation refactor
 - Selected word is now selected with CSS

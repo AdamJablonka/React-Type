@@ -1,20 +1,28 @@
 import React from 'react'
 import TypingTest from './components/TypingTest'
-import { ChakraProvider, Container, Flex, useColorMode, Heading, Button, Kbd, useColorModeValue } from "@chakra-ui/react"
+import { TypeAnimation } from 'react-type-animation';
+import { ChakraProvider, Container, Flex, useColorMode, Heading, Button, useColorModeValue } from "@chakra-ui/react"
 
 const App = () => {
   const { toggleColorMode } = useColorMode()
-  const kbdBackground = useColorModeValue("gray.100", "greay.700")
+  const kbdBackground = useColorModeValue("gray.100", "gray.700")
+  const hlBackground = useColorModeValue("#dddd", "#262b2e")
 
   return (
     <ChakraProvider>
-      <Heading as="h1" noOfLines={1} padding={4}>React-type <sub><i>alpha</i></sub></Heading>
+      <Heading style={{ padding: '10px' }}>
+        <TypeAnimation
+          sequence={['eRactType', 500, 'ReatcyTpe', 250, 'React tyep', 250, 'ReactType', 250]}
+          speed={50}
+          repeat={0}
+        />
+      </Heading>
       <Flex direction="column" padding={1} alignItems="center" justifyContent="center">
-          <Button colorScheme="blue" onClick={toggleColorMode}>Toggle Color Mode</Button>
+          <Button colorScheme="blue" onClick={toggleColorMode}> ☀ </Button>
       </Flex>
       <Container centerContent maxW="750px" >
         <Flex marginTop={5}direction="column" padding={1} >
-          <TypingTest kbdBackground={kbdBackground} />
+          <TypingTest kbdBackground={kbdBackground} hlBackground={hlBackground} />
         </Flex>
       </Container>
     </ChakraProvider>

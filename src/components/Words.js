@@ -1,27 +1,26 @@
 import React from 'react'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
-const Words = ( { wordArray, selector, topDisplacement, changeTop } ) => {
+const Words = ( { wordArray, selector, topDisplacement, changeTop, hlBackground } ) => {
     let wordRef = useRef(null)
-    const { offsetTop } = wordRef.current ?? {}
 
     useEffect(() => {
-        console.log(offsetTop)
-        if(offsetTop > 161){
+        const { offsetTop } = wordRef.current ?? {}
+        if(offsetTop > 190){
             changeTop()
         }
     }, [selector])
 
     const renderWords = wordArray.map((word, index) => {
-        if(selector != index)
+        if(selector !== index)
             return <span key={index} className="word">{word + " "}</span>
         else {
-            return <span ref={wordRef} key={index} className="wordSelected">{word + " "}</span>
+            return <span ref={wordRef} key={index} style={{background: `${hlBackground}`}} className="wordSelected">{word + " "}</span>
         }   
     })
 
     return(
-        <div style={{marginTop: `${topDisplacement}px`}}className='hello'>
+        <div style={{marginTop: `${topDisplacement}px`}}>
             {renderWords}
         </div>
     )

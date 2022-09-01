@@ -9,7 +9,11 @@
     font-size: 25px;
     margin: 3px;
     padding-left:5px;
-    background-color: lightgray;
+    /*
+    262b2e dark
+    dddd light
+    background-color: #ddd;
+    */
 }
 
 .wordCorrect{
@@ -22,6 +26,6 @@
 
 .wordBox{
     min-width: 100px;
-    min-height: 165px;
-    max-height: 165px;
+    min-height: 125px;
+    max-height: 125px;
 }
