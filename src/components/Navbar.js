@@ -8,7 +8,6 @@ import { BsKeyboard } from 'react-icons/bs'
 // <Button style={ { float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }
 // onClick={toggleColorMode}> <FiSun/> </Button>
 const Navbar = () => {
-
     return (
         <div className="header">
             <a href='https://adamjablonka.github.io/React-Type/'>

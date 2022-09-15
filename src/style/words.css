@@ -6,6 +6,18 @@
     padding-left:5px;
 }
 
+.tryAgainButton{
+    color: gray;
+}
+
+.tryAgainButton:hover{
+    color: black;
+}
+
+.tryAgainButton:focus{
+    color: black;
+}
+
 .wordSelected{
     border-radius: 5px;
     font-size: 25px;

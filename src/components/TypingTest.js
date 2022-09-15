@@ -104,7 +104,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
             <Container centerContent>
                 <Text fontSize="50px" margin={2}>Results: </Text>
                 <Text fontSize="50px" margin={2}>{WPM} WPM</Text>
-                <Button colorScheme="blue" onClick={() => showTypingTest()}>Try Again</Button>
+                <Button className="tryAgainButton" style={ {backgroundColor: 'white'} } onClick={() => showTypingTest()}>Try Again</Button>
             </Container>
         )
     }else{
