@@ -11,6 +11,16 @@ Changes and WIP features will be displayed here.
 - Add a link to github page on footer
 - Make darkmode default
 
+## Sept 14
+- Implemented a feature which highlights the correct and incorrect words of the user
+- Reformatted the calculation for WPM from `wordsTyped x 4` to `charactersTyped / 5 /0.25`
+- Implemented a navbar and a footer for more information and a more visually pleasing view
+- Implemented react-icons to create visually pleasing icons for links to other resources
+- added hover animations for icons, and added links for functionality
+- Made words in the textbox unselectable for the user
+- temporarily removed the light mode toggle button to be worked on for a future version
+- changed reset test button to another logo, added on hover animation.
+
 ## Sept 1
 
 - Fixed bug where you can see previous words when they were supposed to be removed

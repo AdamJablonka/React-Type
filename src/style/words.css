@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Roboto&display=swap');
+
 .word{
     font-size: 25px;
     margin: 3px;
@@ -9,18 +11,19 @@
     font-size: 25px;
     margin: 3px;
     padding-left:5px;
-    /*
-    262b2e dark
-    dddd light
-    background-color: #ddd;
-    */
 }
 
 .wordCorrect{
-    color:green;
+    font-size: 25px;
+    margin: 3px;
+    padding-left:5px;
+    color: lightgray;
 }
 
 .wordIncorrect{
+    font-size: 25px;
+    margin: 3px;
+    padding-left:5px;
     color: red;
 }
 
@@ -28,4 +31,88 @@
     min-width: 100px;
     min-height: 125px;
     max-height: 125px;
+}
+
+.header{
+    height: 3rem;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.animationHeader{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #313639;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.animationHeader:hover{
+    color:black;
+}
+
+.reactIcon{
+    color: gray;   
+    transition: 10s;
+}
+
+.reactIcon:hover{
+    color: skyblue;
+    transform: rotate(360deg);
+    transition: 2.5s;
+}
+
+.infoButton{
+    color:gray;
+}
+
+.infoButton:hover{
+    color: black;
+}
+
+.linkedInIcon{
+    color:gray;
+}
+
+.linkedInIcon:hover{
+    color:black;
+}
+
+.githubSymbol{
+    color: gray;
+}
+
+.githubSymbol:hover{
+    color: black;
+}
+
+.icon{
+    color: gray;
+}
+
+.icon:hover{
+    color: black;
+}
+
+.resetButton{
+    color:gray;
+}
+
+.resetButton:focus{
+    color: black;
+}
+
+.resetButton:hover{
+    color:black;
+    transform: rotate(-360deg);
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }
