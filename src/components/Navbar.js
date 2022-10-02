@@ -4,9 +4,12 @@ import { Button } from '@chakra-ui/react';
 import { FiSun, FiInfo } from 'react-icons/fi'
 import { DiReact } from 'react-icons/di'
 import { BsKeyboard } from 'react-icons/bs'
-// saved for later
-// <Button style={ { float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }
-// onClick={toggleColorMode}> <FiSun/> </Button>
+/* 
+saved for later
+<Button style={ { float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }
+onClick={toggleColorMode}> <FiSun/> </Button>
+<Button style={ { cursor: 'default', float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }> <FiSun/> </Button>
+*/
 const Navbar = () => {
     return (
         <div className="header">
@@ -19,12 +22,15 @@ const Navbar = () => {
                         style={ { float: 'left', width: '175px', fontSize: '37.5px', marginLeft: '5px'} }
                     />
             </a>
-            <Button className="icon" style={{ float: 'left', marginTop: '10px', background: 'white', fontSize: '2em', cursor: 'default'}}> <BsKeyboard/> </Button>
-            <Button className="reactIcon" style={{ float: 'left', marginTop: '10px', background: 'white', fontSize: '2em', cursor: 'default'}}> <DiReact/> </Button>
-            <a href="https://github.com/AdamJablonka/React-Type/blob/main/README.md">
-                <Button className="infoButton" style={{ float: 'left', marginTop: '10px', background: 'white', fontSize: '1.5em'}}> <FiInfo/> </Button>
+            <a href="https://adamjablonka.github.io/Keyboard-Layouts-Blogpost/">
+                <Button className="icon" style={{ float: 'left', marginTop: '10px', background: 'white', fontSize: '2em', cursor: 'pointer'}}> <BsKeyboard/> </Button>
             </a>
-            <Button style={ { cursor: 'default', float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }> <FiSun/> </Button>
+            <a href="https://reactjs.org/">
+                <Button className="reactIcon" style={{ float: 'left', marginTop: '10px', background: 'white', fontSize: '2em', cursor: 'pointer'}}> <DiReact/> </Button>
+            </a>           
+            <a href="https://github.com/AdamJablonka/React-Type/blob/main/README.md">
+                <Button className="infoButton" style={{ float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em'}}> <FiInfo/> </Button>
+            </a>
         </div>
     )
 }

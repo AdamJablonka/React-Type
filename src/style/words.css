@@ -116,7 +116,7 @@
 
 .resetButton:hover{
     color:black;
-    transform: rotate(-360deg);
+    transform: rotate(-20deg);
 }
 
 .noselect {

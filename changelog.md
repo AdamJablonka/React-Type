@@ -4,14 +4,20 @@ Changes and WIP features will be displayed here.
 
 ## WIP Features
 
-- CSS highlighting on correct and incorrect words, green for correct and red for incorrect
 - General Visual updates
-- Add a navbar and a footer
-- Fix bug invlolving color changing on buttons
-- Add a link to github page on footer
 - Make darkmode default
+- Fix footer not overlapping when screen is extremely zoomed in
+- Add more display features to make it easier to use on mobile
 
-## Sept 14
+## Release 0.10
+
+- Added functionality to navbar icons
+  - Keyboard icon now redirects to a "React-Type wiki page" on "keyboard layouts"
+  - React icons now redirects to the official ReactJS website
+- Reduced the redo button rotation from -360deg to -20deg
+
+## September 14, 2022
+
 - Implemented a feature which highlights the correct and incorrect words of the user
 - Reformatted the calculation for WPM from `wordsTyped x 4` to `charactersTyped / 5 /0.25`
 - Implemented a navbar and a footer for more information and a more visually pleasing view
@@ -21,15 +27,15 @@ Changes and WIP features will be displayed here.
 - temporarily removed the light mode toggle button to be worked on for a future version
 - changed reset test button to another logo, added on hover animation.
 
-## Sept 1
+## September 1, 2022
 
 - Fixed bug where you can see previous words when they were supposed to be removed
 - Fixed bug where old words were removed on second word of the new line
 - Implemented react-type-animation for header
 - Fixed bug where highlighted word color would not change on dark mode activation
-- Added functionality to prevent same word from appearing twice in a row 
+- Added functionality to prevent same word from appearing twice in a row
 
-## Aug 31
+## August 31, 2022
 
 - Array generation refactor
 - Selected word is now selected with CSS
