@@ -7,7 +7,7 @@ const Words = ( { wordArray, selector, topDisplacement, changeTop, hlBackground,
     useEffect(() => {
         const { offsetTop } = wordRef.current ?? {}
         console.log(offsetTop)
-        if(offsetTop > 120){
+        if(offsetTop > 291){
             changeTop()
         }
     }, [selector])

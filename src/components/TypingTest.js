@@ -109,7 +109,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
         )
     }else{
         return(
-            <Container minW="330px" maxW="750px" centerContent className="noselect">
+            <Container minW="330px" maxW="750px" centerContent className="noselect" style={{display: 'flex', margin: 'auto'}}>
                 <Box mb={2} className="wordBox" borderWidth="2px" rounded="md" overflow="hidden" padding={1}>
                     <Flex className="wordsContainer" direction="column" justifyContent="left">
                         <Words wordArray={wordArray} selector={selector} topDisplacement={topDisplacement} changeTop={changeTop} hlBackground={hlBackground} wordCorrect={wordsCorrect}/>

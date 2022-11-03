@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ChakraProvider>
       <Navbar />
-      <Container style={{ alignItems: 'center', justifyContent: 'center' }} maxW="750px" >
+      <Container style={{ alignItems: 'center', justifyContent: 'center', marginTop: '25vh' }} maxW="750px" >
         <Flex marginTop={5}direction="column" padding={1}  >
           <TypingTest kbdBackground={kbdBackground} hlBackground={hlBackground} />
         </Flex>
