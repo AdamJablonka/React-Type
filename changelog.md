@@ -8,6 +8,11 @@ Changes and WIP features will be displayed here.
 - Make darkmode default
 - Fix footer not overlapping when screen is extremely zoomed in
 - Add more display features to make it easier to use on mobile
+- Increase font size of typing test
+
+## Release 0.11
+
+- Centered Typing test to center
 
 ## Release 0.10
 
