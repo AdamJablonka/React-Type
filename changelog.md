@@ -8,7 +8,7 @@ Changes and WIP features will be displayed here.
 - Make darkmode default
 - Fix footer not overlapping when screen is extremely zoomed in
 - Add more display features to make it easier to use on mobile
-- Increase font size of typing test
+- Change font on animation
 
 ## Release 0.12
 
@@ -16,6 +16,7 @@ Changes and WIP features will be displayed here.
 - Font size of words in typing test increase
 - Page layout changed
 - Web icon added
+- Reverted changes from release 0.11
 
 ## Release 0.11
 

@@ -109,12 +109,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
         )
     }else{
         return(
-            <Container minW="330px" maxW="750px" centerContent className="noselect" style={{display: 'flex', margin: 'auto'}}>
-                <Flex margin={5} id="typing-instructions">
-                    <span>
-                        <Kbd background={kbdBackground}>tab</Kbd> + <Kbd background={kbdBackground}>enter</Kbd> - restart test when typing
-                    </span>
-                </Flex>
+            <Container minW="330px" maxW="750px" centerContent className="noselect">
                 <Box mb={2} className="wordBox" borderWidth="2px" rounded="md" overflow="hidden" padding={1}>
                     <Flex className="wordsContainer" direction="column" justifyContent="left">
                         <Words wordArray={wordArray} selector={selector} topDisplacement={topDisplacement} changeTop={changeTop} hlBackground={hlBackground} wordCorrect={wordsCorrect}/>
@@ -128,6 +123,11 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
                 </Flex>
                 <Flex margin={2} direction="column">
                     <IconButton className="resetButton" aria-label='Restart Test' onClick={reset} style={{fontSize: '1.5em', backgroundColor: 'white'}} icon={<CgUndo/>} />
+                </Flex>
+                <Flex margin={5} id="typing-instructions">
+                    <span>
+                        <Kbd background={kbdBackground}>tab</Kbd> + <Kbd background={kbdBackground}>enter</Kbd> - restart test when typing
+                    </span>
                 </Flex>
             </Container>
         )

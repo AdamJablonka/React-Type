@@ -1,6 +1,6 @@
 import React from 'react'
 import TypingTest from './components/TypingTest'
-import { ChakraProvider, Container, Flex, useColorMode, Heading, Button, useColorModeValue } from "@chakra-ui/react"
+import { ChakraProvider, Container, Flex, useColorMode, Heading, Button, useColorModeValue, flexbox } from "@chakra-ui/react"
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -11,8 +11,8 @@ const App = () => {
   return (
     <ChakraProvider>
       <Navbar />
-      <Container style={{ alignItems: 'center', justifyContent: 'center', marginTop: '10%' }} maxW="750px" >
-        <Flex marginTop={5}direction="column" padding={1}  >
+      <Container style={{display: 'flexbox', alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}} maxW="750px" >
+        <Flex marginTop={5} direction="column" padding={1}  >
           <TypingTest kbdBackground={kbdBackground} hlBackground={hlBackground} />
         </Flex>
       </Container>
