@@ -1,14 +1,21 @@
 import React from 'react'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 const Words = ( { wordArray, selector, topDisplacement, changeTop, hlBackground, wordCorrect} ) => {
     let wordRef = useRef(null)
+    const [originalOffset, setOriginalOffset] = useState(0)
+
+    useEffect(() => {
+        var { offsetTop } = wordRef.current ?? {}
+        setOriginalOffset(offsetTop)
+        console.log("original offset:", originalOffset)
+    }, [])
 
     useEffect(() => {
         const { offsetTop } = wordRef.current ?? {}
         console.log(offsetTop)
-        if(offsetTop > 291){
-            changeTop()
+        if(originalOffset != 0 && offsetTop > originalOffset){
+            changeTop(offsetTop - originalOffset)
         }
     }, [selector])
 

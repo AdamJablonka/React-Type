@@ -10,6 +10,13 @@ Changes and WIP features will be displayed here.
 - Add more display features to make it easier to use on mobile
 - Increase font size of typing test
 
+## Release 0.12
+
+- Word display (top offset) method changed to be non-static, fixed bugs with different displays
+- Font size of words in typing test increase
+- Page layout changed
+- Web icon added
+
 ## Release 0.11
 
 - Centered Typing test to center

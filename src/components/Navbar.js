@@ -4,12 +4,7 @@ import { Button } from '@chakra-ui/react';
 import { FiSun, FiInfo } from 'react-icons/fi'
 import { DiReact } from 'react-icons/di'
 import { BsKeyboard } from 'react-icons/bs'
-/* 
-saved for later
-<Button style={ { float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }
-onClick={toggleColorMode}> <FiSun/> </Button>
-<Button style={ { cursor: 'default', float: 'right', marginTop: '10px', background: 'white', fontSize: '1.5em' } }> <FiSun/> </Button>
-*/
+
 const Navbar = () => {
     return (
         <div className="header">
