@@ -10,6 +10,11 @@ Changes and WIP features will be displayed here.
 - Add more display features to make it easier to use on mobile
 - Change font on animation
 
+## Release 0.13
+
+- Added Accuracy
+- Plan on adding 'words wrong:' to results page
+
 ## Release 0.12
 
 - Word display (top offset) method changed to be non-static, fixed bugs with different displays

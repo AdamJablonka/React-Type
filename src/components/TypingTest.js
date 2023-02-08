@@ -28,6 +28,7 @@ let selector = 0
 let wordArray = generateArray()
 let currWord = wordArray[selector]
 let WPM = 0
+let accuracy = 0
 let timeInterval = 15
 let timeIntervalCalculation = (timeInterval / 60)
 
@@ -35,6 +36,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
     const [topDisplacement, setTopDisplacement] = useState(0)
     const [inputVal, setInputVal] = useState('')
     const [points, setPoints] = useState(0)
+    const [totalChars, setTotalChars] = useState(0)
     const [wordArrayState, setWordArrayState] = useState(wordArray)
     const [showResults, setShowResults] = useState(false)
     const { time, startTimer, resetTimer } = useTimer(timeInterval)
@@ -59,12 +61,14 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
             event.target.value = ''
             selector += 1
             setPoints(points => points + currWord.length)
+            setTotalChars(totalChars => totalChars + currWord.length)
             setWordsCorrect(arr => [...arr, "true"])
             currWord = wordArray[selector]
         }
 
         if (event.target.value.includes(' ')){
             event.target.value = ''
+            setTotalChars(totalChars => totalChars + currWord.length)
             setWordsCorrect(arr => [...arr, "false"])
             selector += 1
             currWord = wordArray[selector]
@@ -79,6 +83,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
         setTopDisplacement(topDisplacement => topDisplacement = 0)
         setInputVal(inputVal => inputVal = '')
         setPoints(points => points = 0)
+        setTotalChars(totalChars => totalChars = 0)
         setWordsCorrect(arr => [])
         wordArray = generateArray()
         setWordArrayState(wordArrayState => wordArrayState = wordArray)
@@ -95,6 +100,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
     
     if(time === 0){
         WPM = Math.floor(((points / 5) / timeIntervalCalculation))
+        accuracy = Number(((points / totalChars) * 100).toFixed(1))
         setShowResults(showResults => showResults = true)
         reset()
     }
@@ -104,6 +110,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
             <Container centerContent>
                 <Text fontSize="50px" margin={2}>Results: </Text>
                 <Text fontSize="50px" margin={2}>{WPM} WPM</Text>
+                <Text fontSize="50px" margin={2}>{accuracy}% Accuracy</Text>
                 <Button className="tryAgainButton" style={ {backgroundColor: 'white'} } onClick={() => showTypingTest()}>Try Again</Button>
             </Container>
         )
