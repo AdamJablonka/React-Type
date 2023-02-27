@@ -17,10 +17,12 @@ There are future plans to for ReactType to log your typing tests to a database f
 
 ## Preview
 
-Typing preview:
+- Page preview:
+
 ![pagePreview](/assets/page_gif_1.gif)
 
-Typing preview:
+- Typing preview preview:
+
 ![typingPreview](/assets/typing_gif_1.gif)
 
 ## Change log
