@@ -1,9 +1,8 @@
-# React Type
+# React-Type
 
 ![reactTypeLogo](/assets/logo_gif_1.gif)
-_React-Type_ is a simple front end web application to practice typing common English words, and to test typing speed.
 
-Created using the React framework.
+_React-Type_ is a simple front end web application to practice typing common English words, and to test typing speed, created using the React framework.
 
 `WIP: Some features of the site may not work.`
 
