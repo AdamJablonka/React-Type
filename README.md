@@ -1,19 +1,29 @@
 # React Type
-*React-Type* is a simple front end web application to practice typing common English words, and to test typing speed.
+
+![reactTypeLogo](/assets/logo_gif_1.gif)
+_React-Type_ is a simple front end web application to practice typing common English words, and to test typing speed.
 
 Created using the React framework.
 
-```WIP: Some features of the site may not work.```
+`WIP: Some features of the site may not work.`
 
-# Intended User Base
+## Intended User Base
 
-The development of this program is being developed first and foremost for casual typers, maybe someone who wants a quick few fast and responsive typing tests to warm up for a day of typing.
+The primary focus of developing this program is to cater to casual typists who require a few quick and responsive typing tests to warm up before a day of typing.
 
-The websie is not intended for competetive typers and those who are trying to improve at typing in a very fast and efficient manner.
+This website is not designed for individuals seeking to enhance their typing skills for competitive purposes or to improve their typing speed and efficiency significantly.
 
-There are future plans to for ReactType to log your typing tests to give you an all around average, but that is not an urgent feature for the application at the moment. 
-```Future plans for the application will be placed in changelog.md```
+There are future plans to for ReactType to log your typing tests to a database for each account, and maybe add typing sounds but development is currently postponed.
+`Future plans for the application will be placed in changelog.md`
 
-# Change log
+## Preview
 
-A change log for all the changes plans for future features of *ReactType* can be viewed in changelog.md, to see the development process and check future plans, check there.
+Typing preview:
+![pagePreview](/assets/page_gif_1.gif)
+
+Typing preview:
+![typingPreview](/assets/typing_gif_1.gif)
+
+## Change log
+
+A change log for all the changes plans for future features of _ReactType_ can be viewed in changelog.md, to see the development process and check future plans, check there.
