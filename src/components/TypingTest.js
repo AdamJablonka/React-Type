@@ -66,7 +66,7 @@ const TypingTest = ( { kbdBackground, hlBackground } ) => {
             currWord = wordArray[selector]
         }
 
-        if (event.target.value.includes(' ')){
+        if (event.target.value.includes(' ') && event.target.value != ' '){
             event.target.value = ''
             setTotalChars(totalChars => totalChars + currWord.length)
             setWordsCorrect(arr => [...arr, "false"])
