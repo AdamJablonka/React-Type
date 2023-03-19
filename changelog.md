@@ -9,6 +9,11 @@ Changes and WIP features will be displayed here.
 - Fix footer not overlapping when screen is extremely zoomed in
 - Add more display features to make it easier to use on mobile
 - Change font on animation
+- Fix bug on non chrome browsers that make the typing animation sizing overflow
+
+## Release 0.13.5
+
+- Updated word list to match most common english words with North American spelling
 
 ## Release 0.13
 
