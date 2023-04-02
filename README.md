@@ -28,3 +28,5 @@ There are future plans to for ReactType to log your typing tests to a database f
 ## Change log
 
 A change log for all the changes plans for future features of _ReactType_ can be viewed in changelog.md, to see the development process and check future plans, check there.
+
+If there are any issues you encounter in the application, feel free to let me know!
