@@ -2,7 +2,7 @@
 
 ![reactTypeLogo](/assets/logo_gif_1.gif)
 
-_React-Type_ is a simple front end web application to practice typing common English words, and to test typing speed, created using the React framework.
+_React-Type_ is a simple front-end web application to practice typing common English words, and to test typing speed, created using the React framework.
 
 `WIP: Some features of the site may not work.`
 
@@ -12,8 +12,8 @@ The primary focus of developing this program is to cater to casual typists who r
 
 This website is not designed for individuals seeking to enhance their typing skills for competitive purposes or to improve their typing speed and efficiency significantly.
 
-There are future plans to for ReactType to log your typing tests to a database for each account, and maybe add typing sounds but development is currently postponed.
-`Future plans for the application will be placed in changelog.md`
+There are plans for ReactType to log your typing tests to a database for each account, and maybe add typing sounds but development is currently postponed.
+`Plans for the application will be placed in the changelog.md`
 
 ## Preview
 
@@ -27,6 +27,6 @@ There are future plans to for ReactType to log your typing tests to a database f
 
 ## Change log
 
-A change log for all the changes plans for future features of _ReactType_ can be viewed in changelog.md, to see the development process and check future plans, check there.
+A change log for all the changes plans for future features of _ReactType_ can be viewed in the changelog, to see the development process and plans, check there.
 
 If there are any issues you encounter in the application, feel free to let me know!
